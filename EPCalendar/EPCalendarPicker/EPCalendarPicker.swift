@@ -283,7 +283,7 @@ open class EPCalendarPicker: UICollectionViewController {
     
     override open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! EPCalendarCell1
-        if !multiSelectEnabled && cell.isCellSelectable! {
+        if !multiSelectEnabled {
             calendarDelegate?.epCalendarPicker!(self, didSelectDate: cell.currentDate as Date)
             cell.selectedForLabelColor(dateSelectionColor)
             dismiss(animated: true, completion: nil)
